@@ -1,29 +1,32 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import ReactPlayer from 'react-player'
-import logo from './logo.svg';
+
 import './App.scss';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Fragment>
+                <div className="player">
+                    <div className="player__overlay"/>
+                    <ReactPlayer
+                        url='https://www.youtube.com/watch?v=PBwAxmrE194'
+                        youtubeConfig={{
+                            playerVars: {
+                                showinfo: 0,
+                                controls: 0,
+                                disablekb: 1,
+                                modestbranding: 1
+                            }
+                        }}
+                    />
+                </div>
+                <div className="container">
+                    Hello, world!
+                </div>
+            </Fragment>
+        );
+    }
 }
 
 export default App;
