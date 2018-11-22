@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player'
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {
