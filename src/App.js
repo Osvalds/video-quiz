@@ -4,25 +4,37 @@ import ReactPlayer from 'react-player'
 import './App.scss';
 
 class App extends Component {
+    state = {
+        playing: false
+    };
+
+
+    playPause = () => {
+        this.setState({playing: !this.state.playing})
+    };
+
     render() {
+        const {playing} = this.state;
+
         return (
             <Fragment>
-                <div className="player">
-                    <div className="player__overlay"/>
-                    <ReactPlayer
-                        url='https://www.youtube.com/watch?v=PBwAxmrE194'
-                        youtubeConfig={{
-                            playerVars: {
-                                showinfo: 0,
-                                controls: 0,
-                                disablekb: 1,
-                                modestbranding: 1
-                            }
-                        }}
-                    />
-                </div>
-                <div className="container">
-                    Hello, world!
+                <ReactPlayer
+                    url='https://www.youtube.com/watch?v=PBwAxmrE194'
+                    youtubeConfig={{
+                        playerVars: {
+                            showinfo: 0,
+                            controls: 0,
+                            disablekb: 1,
+                            modestbranding: 1
+                        }
+                    }}
+                    playing={playing}
+                    width={"auto"}
+                    height={"auto"}
+                    className={"player"}
+                />
+                <div className="controls">
+                    <button onClick={this.playPause}>{playing ? "Pause" : "Play"}</button>
                 </div>
             </Fragment>
         );
