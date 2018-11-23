@@ -26,12 +26,15 @@ class App extends Component {
             <Fragment>
                 <ReactPlayer
                     url='https://www.youtube.com/watch?v=PBwAxmrE194'
-                    youtubeConfig={{
-                        playerVars: {
-                            showinfo: 0,
-                            controls: 0,
-                            disablekb: 1,
-                            modestbranding: 1
+                    config={{
+                        youtube: {
+                            playerVars: {
+                                showinfo: 0,
+                                controls: 0,
+                                disablekb: 1,
+                                modestbranding: 1
+                            }
+
                         }
                     }}
                     playing={playing}
