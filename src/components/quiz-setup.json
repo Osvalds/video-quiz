@@ -1,0 +1,160 @@
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "question",
+      "title": "Ieejas karte uz Latvijas valsts dibināšanu",
+      "description": "Kas īsti notika pirms simts gadiem 18. novembrī? Kā tika pasludināta mūsu valsts? Piedzīvo šo dienu un uzzini visas atbildes.",
+      "video": "https://youtu.be/hp0hHFa_GXU",
+      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
+      "videoStart": 0,
+      "videoEnd": 9,
+      "textContentStart": 0,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Sākt",
+          "link": 1,
+          "data-ga-action": "Start button click"
+        }
+      ],
+      "nextSlide": false,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {}
+    },
+    {
+      "id": 1,
+      "type": "video",
+      "title": "",
+      "description": "",
+      "video": "https://youtu.be/hp0hHFa_GXU",
+      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
+      "videoStart": 10,
+      "videoEnd": 67,
+      "buttons": [],
+      "nextSlide": 2,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {}
+    },
+    {
+      "id": 2,
+      "type": "question",
+      "title": "Where you go next?",
+      "description": "",
+      "video": "https://youtu.be/hp0hHFa_GXU",
+      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
+      "buttons": [
+        {
+          "class": "button--answer",
+          "title": "Next",
+          "link": 3,
+          "data-ga-action": "Next button click"
+        },
+        {
+          "class": "button--answer",
+          "title": "Previews",
+          "link": 1,
+          "data-ga-action": "Previews button click"
+        }
+      ],
+      "nextSlide": false,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {
+        "id": 3,
+        "title": "Next",
+        "INFOCOMMENT": "Here is added variables, depends of user choice from buttons - which game will play"
+      }
+    },
+    {
+      "id": 3,
+      "type": "video",
+      "title": "",
+      "description": "",
+      "video": "https://youtu.be/hp0hHFa_GXU",
+      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
+      "videoStart": 72,
+      "videoEnd": 98,
+      "buttons": [],
+      "nextSlide": 4,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {
+        "id": 3,
+        "title": "Next"
+      }
+    },
+    {
+      "id": 4,
+      "type": "question",
+      "title": "Aiziet, vecā labā zolīte. Pieņemu, ka noteikumi Tev ir skaidri? Uz ko spēlēsi?",
+      "description": "",
+      "video": "https://www.youtube.com/watch?v=aqRtUwi3kv8",
+      "videoCaptions": "",
+      "buttons": [
+        {
+          "class": "button--answer",
+          "title": "Nauda",
+          "link": 7
+        },
+        {
+          "class": "button--answer",
+          "title": "Ledenes",
+          "link": 8
+        }
+      ],
+      "nextSlide": false,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {
+        "id": 3,
+        "title": "Next"
+      }
+    },
+    {
+      "id": 7,
+      "type": "video",
+      "title": "",
+      "description": "Brīvo finanšu līdzekļu izmantošana ir katra paša izvēle. Spēlējot uz naudu iz jāapzinās, ka visdrīzāk naudu nekad neatgūsi. Pats svarīgākais spēlei ir tas, lai tā ir interesanta - izaicinoša. Spēlēšana uz naudu nav peļņas avots.",
+      "video": "https://www.youtube.com/watch?v=qOZ1u9VpoMk",
+      "videoCaptions": "subtitle-link",
+      "buttons": [],
+      "nextSlide": 9,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {
+        "id": 3,
+        "title": "Next"
+      }
+    },
+    {
+      "id": 9,
+      "type": "result",
+      "title": "Ko darīsi tālāk?",
+      "description": "",
+      "buttons": [
+        {
+          "class": "button--answer",
+          "title": "Vēl vienu kārti",
+          "link": 8
+        },
+        {
+          "class": "button--answer",
+          "title": "Pietiek",
+          "link": 9
+        }
+      ],
+      "nextSlide": false,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "resultUrl": "example.com/result1/",
+      "resultbuttomHtml": "https://kurmanaalga.lv/qr-apdomeklis.html",
+      "chosenGame": {
+        "id": 3,
+        "title": "Acīte"
+      }
+    }
+  ]
+}

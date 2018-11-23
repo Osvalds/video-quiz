@@ -1,13 +1,19 @@
 import React, {Component, Fragment} from 'react';
 import ReactPlayer from 'react-player'
+import config from './components/quiz-setup'
+
 
 import './App.scss';
 
 class App extends Component {
     state = {
-        playing: false
+        playing: false,
+        config: config
     };
 
+    componentDidMount() {
+        console.log(this.state.config);
+    }
 
     playPause = () => {
         this.setState({playing: !this.state.playing})
