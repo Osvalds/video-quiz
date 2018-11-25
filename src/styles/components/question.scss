@@ -1,16 +1,33 @@
 .question {
-  background-color: white;
+  background-color: black;
   position: fixed;
-  top: 20px;
+  top: 50%;
   left: 20px;
   right: 50%;
+  color: white;
+  transform: translateY(-50%);
+  padding: 30px;
+
 
   &__title {
-
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 3.17px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    font-size: 14.2px;
+    max-width: 360px;
   }
 
   &__description {
-
+    font-style: normal;
+    font-weight: 300;
+    padding-bottom: 10px;
+    font-size: 14.2px;
+    letter-spacing: .57px;
+    line-height: 20px;
+    max-width: 400px;
   }
 
 }

@@ -12,7 +12,7 @@
       "textContentStart": 0,
       "buttons": [
         {
-          "class": "button--link",
+          "class": "button--link button--start",
           "title": "Sākt",
           "link": 1,
           "data-ga-action": "Start button click"
@@ -26,8 +26,7 @@
     {
       "id": 1,
       "type": "question",
-      "title": "Ieejas karte uz Latvijas valsts dibināšanu",
-      "description": "Kas īsti notika pirms simts gadiem 18. novembrī? Kā tika pasludināta mūsu valsts? Piedzīvo šo dienu un uzzini visas atbildes.",
+      "title": "Ko ieceļ par pagaidu valdības vadītāju?",
       "video": "https://youtu.be/hp0hHFa_GXU",
       "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
       "videoStart": 0,
@@ -36,10 +35,23 @@
       "buttons": [
         {
           "class": "button--link",
-          "title": "Sākt",
-          "link": 1,
-          "data-ga-action": "Start button click"
+          "title": "Gustavu Zemgalu",
+          "link": 2,
+          "data-ga-action": "Gustavs Zemgals click"
+        },
+        {
+          "class": "button--link",
+          "title": "Karlis Ulmanis",
+          "link": 2,
+          "data-ga-action": "Karlis Ulmanis click"
+        },
+        {
+          "class": "button--link",
+          "title": "Zigfridu Annu Meirovicu",
+          "link": 2,
+          "data-ga-action": "Zigfrids Anna Meirovis"
         }
+
       ],
       "nextSlide": false,
       "slideHeaderHtml": "",
@@ -62,7 +74,7 @@
       "chosenGame": {}
     },
     {
-      "id": 2,
+      "id": 3,
       "type": "question",
       "title": "Where you go next?",
       "description": "",
