@@ -10,7 +10,8 @@ class App extends Component {
         playing: true,
         config: config.slides,
         currentQuestion: 0,
-        muted: false
+        muted: false,
+        showQuestion: true, // first slide must show immediately
     };
 
     playPause = () => {
@@ -21,9 +22,12 @@ class App extends Component {
         this.setState({muted: !this.state.muted})
     };
 
-
     advanceToNextState = (nextState) => {
-        this.setState({currentQuestion: nextState})
+        this.setState({
+            currentQuestion: nextState,
+            showQuestion: false,
+        });
+        this.player.seekTo(this.state.config[nextState].videoStart);
     };
 
     onFragmentStart = e => {
@@ -31,11 +35,15 @@ class App extends Component {
     };
 
     onProgress = state => {
-        console.log('onProgress', state)
+        console.log(state);
+        console.log(this.player)
         const {playedSeconds} = state;
         const {videoEnd, loopStart} = this.state.config[this.state.currentQuestion];
-        console.log(loopStart, videoEnd);
-        if (playedSeconds >= videoEnd ) {
+
+        if (playedSeconds >= videoEnd) {
+            this.setState({
+                showQuestion: true,
+            });
             this.player.seekTo(parseFloat(loopStart))
         }
     };
@@ -45,25 +53,27 @@ class App extends Component {
     };
 
     render() {
-        const {playing, currentQuestion, config, muted} = this.state;
+        const {playing, currentQuestion, config, muted, showQuestion} = this.state;
 
         return (
             <Fragment>
                 <ReactPlayer
                     ref={this.ref}
 
-                    url='https://youtu.be/hp0hHFa_GXU'
+                    url='https://youtu.be/hp0hHFa_GXU?ytp-pause-overlay=0'
                     config={{
                         youtube: {
                             playerVars: {
                                 showinfo: 0,
-                                controls: 0,
+                                controls: 1,
+                                rel: 0,
                                 disablekb: 1,
-                                modestbranding: 1
+                                modestbranding: 1,
+                                playsinline: 1
                             }
-
                         }
                     }}
+                    volume={0.8}
                     playing={playing}
                     width={"auto"}
                     height={"auto"}
@@ -77,7 +87,8 @@ class App extends Component {
                     <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
                 </div>
                 <Question config={config[currentQuestion]}
-                          advanceState={this.advanceToNextState}/>
+                          advanceState={this.advanceToNextState}
+                          showQuestion={showQuestion}/>
             </Fragment>
         );
     }

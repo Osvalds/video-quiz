@@ -41,15 +41,18 @@ export default class Question extends Component {
 
     render() {
         const {type} = this.props.config;
+        if (this.props.showQuestion) {
+            switch (type) {
+                case "intro":
+                    return <Intro props={this.props}/>;
+                case "question":
+                    return <RegularQuestion props={this.props}/>;
+                default:
+                    return <div>Error loading the question</div>;
 
-        switch (type) {
-            case "intro":
-                return <Intro props={this.props}/>;
-            case "question":
-                return <RegularQuestion props={this.props}/>;
-            default:
-                return <div>Error loading the question</div>;
-
+            }
+        } else {
+            return null;
         }
 
 

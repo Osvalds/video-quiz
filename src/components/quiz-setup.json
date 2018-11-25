@@ -9,7 +9,7 @@
       "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
       "videoStart": 0,
       "videoEnd": 8,
-      "loopStart": 6,
+      "loopStart": 6.5,
       "textContentStart": 0,
       "buttons": [
         {
@@ -30,8 +30,9 @@
       "title": "Ko ieceļ par pagaidu valdības vadītāju?",
       "video": "https://youtu.be/hp0hHFa_GXU",
       "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
-      "videoStart": 0,
-      "videoEnd": 9,
+      "videoStart": 10,
+      "videoEnd": 71,
+      "loopStart": 70.5,
       "textContentStart": 0,
       "buttons": [
         {
