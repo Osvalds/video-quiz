@@ -5,193 +5,193 @@
       "type": "intro",
       "title": "Ieejas karte uz Latvijas valsts dibināšanu",
       "description": "Kas īsti notika pirms simts gadiem 18. novembrī? Kā tika pasludināta mūsu valsts? Piedzīvo šo dienu un uzzini visas atbildes.",
-      "video": "https://youtu.be/hp0hHFa_GXU",
-      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
       "videoStart": 0,
       "videoEnd": 8,
-      "loopStart": 6.5,
       "textContentStart": 0,
       "buttons": [
         {
           "class": "button--start",
           "title": "Sākt",
           "link": 1,
-          "data-ga-action": "Start button click"
+          "ga-action": "Start button click"
         }
-      ],
-      "nextSlide": false,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {}
+      ]
     },
     {
       "id": 1,
       "type": "question",
       "title": "Ko ieceļ par pagaidu valdības vadītāju?",
-      "video": "https://youtu.be/hp0hHFa_GXU",
-      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
       "videoStart": 10,
-      "videoEnd": 71,
-      "loopStart": 70,
-      "textContentStart": 0,
+      "showQuestion": 69,
+      "videoEnd": 70,
       "buttons": [
         {
           "class": "button--link",
           "title": "Gustavu Zemgalu",
           "link": 2,
-          "data-ga-action": "Gustavs Zemgals click"
+          "ga-action": "Gustavs Zemgals click"
         },
         {
           "class": "button--link",
           "title": "Karlis Ulmanis",
           "link": 2,
-          "data-ga-action": "Karlis Ulmanis click"
+          "ga-action": "Karlis Ulmanis click"
         },
         {
           "class": "button--link",
           "title": "Zigfridu Annu Meirovicu",
           "link": 2,
-          "data-ga-action": "Zigfrids Anna Meirovis"
+          "ga-action": "Zigfrids Anna Meirovis"
         }
-
-      ],
-      "nextSlide": false,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {}
+      ]
     },
     {
       "id": 2,
-      "type": "video",
-      "title": "",
-      "description": "",
-      "video": "https://youtu.be/hp0hHFa_GXU",
-      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
-      "videoStart": 10,
-      "videoEnd": 67,
-      "buttons": [],
-      "nextSlide": 2,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {}
+      "type": "question",
+      "title": "Cik ieejas kartes tika izgatavotas?",
+      "videoStart": 72.2,
+      "showQuestion": 101,
+      "videoEnd": 102,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "1200",
+          "link": 3,
+          "ga-action": "Gustavs Zemgals click"
+        },
+        {
+          "class": "button--link",
+          "title": "1000",
+          "link": 3,
+          "ga-action": "1200"
+        },
+        {
+          "class": "button--link",
+          "title": "800",
+          "link": 3,
+          "ga-action": "800"
+        }
+      ]
     },
     {
       "id": 3,
       "type": "question",
-      "title": "Where you go next?",
-      "description": "",
-      "video": "https://youtu.be/hp0hHFa_GXU",
-      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
+      "title": "Kapēc uz skatuves bija tik daudz telpaugu?",
+      "videoStart": 104.5,
+      "showQuestion": 171,
+      "videoEnd": 172,
       "buttons": [
         {
-          "class": "button--answer",
-          "title": "Next",
-          "link": 3,
-          "data-ga-action": "Next button click"
+          "class": "button--link",
+          "title": "Tolaik telpaugi bija modē",
+          "link": 4,
+          "ga-action": "Gustavs Zemgals click"
         },
         {
-          "class": "button--answer",
-          "title": "Previews",
-          "link": 1,
-          "data-ga-action": "Previews button click"
+          "class": "button--link",
+          "title": "Ko atrada, to uzlika",
+          "link": 4,
+          "ga-action": "1200"
+        },
+        {
+          "class": "button--link",
+          "title": "Ulmanis tā gribēja",
+          "link": 4,
+          "ga-action": "1200"
         }
-      ],
-      "nextSlide": false,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {
-        "id": 3,
-        "title": "Next",
-        "INFOCOMMENT": "Here is added variables, depends of user choice from buttons - which game will play"
-      }
-    },
-    {
-      "id": 3,
-      "type": "video",
-      "title": "",
-      "description": "",
-      "video": "https://youtu.be/hp0hHFa_GXU",
-      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
-      "videoStart": 72,
-      "videoEnd": 98,
-      "buttons": [],
-      "nextSlide": 4,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {
-        "id": 3,
-        "title": "Next"
-      }
+      ]
     },
     {
       "id": 4,
       "type": "question",
-      "title": "Aiziet, vecā labā zolīte. Pieņemu, ka noteikumi Tev ir skaidri? Uz ko spēlēsi?",
-      "description": "",
-      "video": "https://www.youtube.com/watch?v=aqRtUwi3kv8",
-      "videoCaptions": "",
+      "title": "Cik Tautas padomes pārstāvju piedalījās Latvijas valsts proklamēšanā?",
+      "videoStart": 175.1,
+      "showQuestion": 225,
+      "videoEnd": 226,
       "buttons": [
         {
-          "class": "button--answer",
-          "title": "Nauda",
-          "link": 7
+          "class": "button--link",
+          "title": "38",
+          "link": 5,
+          "ga-action": "Gustavs Zemgals click"
         },
         {
-          "class": "button--answer",
-          "title": "Ledenes",
-          "link": 8
+          "class": "button--link",
+          "title": "Ko atrada, to uzlika",
+          "link": 5,
+          "ga-action": "40"
+        },
+        {
+          "class": "button--link",
+          "title": "Ulmanis tā gribēja",
+          "link": 5,
+          "ga-action": "42"
         }
-      ],
-      "nextSlide": false,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {
-        "id": 3,
-        "title": "Next"
-      }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "question",
+      "title": "Cik reizes pēc kārtas tika nodziedāta Latvijas valsts himna?",
+      "videoStart": 229.2,
+      "showQuestion": 296,
+      "videoEnd": 297,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "1",
+          "link": 6,
+          "ga-action": "1"
+        },
+        {
+          "class": "button--link",
+          "title": "3",
+          "link": 6,
+          "ga-action": "3"
+        },
+        {
+          "class": "button--link",
+          "title": "6",
+          "link": 6,
+          "ga-action": "6"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "question",
+      "title": "Noklausies dažas no runām",
+      "videoStart": 300,
+      "showQuestion": 345,
+      "videoEnd": 346,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Tālāk",
+          "link": 7,
+          "ga-action": "1"
+        }
+      ]
     },
     {
       "id": 7,
-      "type": "video",
-      "title": "",
-      "description": "Brīvo finanšu līdzekļu izmantošana ir katra paša izvēle. Spēlējot uz naudu iz jāapzinās, ka visdrīzāk naudu nekad neatgūsi. Pats svarīgākais spēlei ir tas, lai tā ir interesanta - izaicinoša. Spēlēšana uz naudu nav peļņas avots.",
-      "video": "https://www.youtube.com/watch?v=qOZ1u9VpoMk",
-      "videoCaptions": "subtitle-link",
-      "buttons": [],
-      "nextSlide": 9,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "chosenGame": {
-        "id": 3,
-        "title": "Next"
-      }
-    },
-    {
-      "id": 9,
-      "type": "result",
-      "title": "Ko darīsi tālāk?",
-      "description": "",
+      "type": "outro",
+      "title": "Saules mūžu Latvijai!",
+      "description": "18. novembrī svinam valsts simto dzimšanas dienu. Iepazīsties ar svētku programmu.",
+      "videoStart": 347,
+      "showQuestion": 345,
+      "videoEnd": 352,
       "buttons": [
         {
-          "class": "button--answer",
-          "title": "Vēl vienu kārti",
-          "link": 8
-        },
-        {
-          "class": "button--answer",
-          "title": "Pietiek",
-          "link": 9
+          "class": "button--link",
+          "title": "Tālāk",
+          "link": 7,
+          "ga-action": "1"
         }
-      ],
-      "nextSlide": false,
-      "slideHeaderHtml": "",
-      "slideFooterHtml": "",
-      "resultUrl": "example.com/result1/",
-      "resultbuttomHtml": "https://kurmanaalga.lv/qr-apdomeklis.html",
-      "chosenGame": {
-        "id": 3,
-        "title": "Acīte"
-      }
+      ]
     }
+
+
+
   ]
 }

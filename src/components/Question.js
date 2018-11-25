@@ -37,6 +37,19 @@ function RegularQuestion({props}) {
     </section>
 }
 
+function Outro({props}) {
+    const {title, description, buttons} = props.config;
+    return <section className="question">
+        <h2 className="question__title">
+            {title}
+        </h2>
+        <div className="question__description">
+            {description}
+        </div>
+        <ListButtons buttons={buttons} advanceState={props.advanceState}/>
+    </section>
+}
+
 export default class Question extends Component {
 
     render() {
@@ -45,6 +58,8 @@ export default class Question extends Component {
             switch (type) {
                 case "intro":
                     return <Intro props={this.props}/>;
+                case "outro":
+                    return <Outro props={this.props}/>
                 case "question":
                     return <RegularQuestion props={this.props}/>;
                 default:

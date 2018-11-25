@@ -26,6 +26,7 @@ class App extends Component {
         this.setState({
             currentQuestion: nextState,
             showQuestion: false,
+            playing: true
         });
         this.player.seekTo(this.state.config[nextState].videoStart);
     };
@@ -35,14 +36,21 @@ class App extends Component {
     };
 
     onProgress = state => {
+        console.log(state);
         const {playedSeconds} = state;
-        const {videoEnd, loopStart} = this.state.config[this.state.currentQuestion];
+        const {videoEnd, showQuestion, loopStart} = this.state.config[this.state.currentQuestion];
+
+        if (playedSeconds >= showQuestion) {
+            this.setState({
+                showQuestion: true
+            })
+        }
 
         if (playedSeconds >= videoEnd) {
             this.setState({
                 showQuestion: true,
+                playing: false
             });
-            this.player.seekTo(parseFloat(loopStart))
         }
     };
 
@@ -63,7 +71,7 @@ class App extends Component {
                         youtube: {
                             playerVars: {
                                 showinfo: 0,
-                                controls: 0,
+                                controls: 1,
                                 rel: 0,
                                 disablekb: 1,
                                 modestbranding: 1,
@@ -83,6 +91,7 @@ class App extends Component {
                 <div className="controls">
                     <button onClick={this.playPause}>{playing ? "Pause" : "Play"}</button>
                     <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
+                    <button onClick={(e) => this.advanceToNextState(currentQuestion + 1, e)}>Next</button>
                 </div>
                 <Question config={config[currentQuestion]}
                           advanceState={this.advanceToNextState}
