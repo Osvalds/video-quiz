@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import ReactPlayer from 'react-player'
 import config from './components/quiz-setup'
-import Quiz from './components/Quiz.js'
 
 import './App.scss';
+import Question from "./components/Question";
 
 class App extends Component {
     state = {
@@ -15,6 +15,15 @@ class App extends Component {
     playPause = () => {
         this.setState({playing: !this.state.playing})
     };
+
+    advanceToNextState = (nextState) => {
+        console.log("next-state", nextState)
+        this.setState({currentQuestion: nextState})
+    };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("snapshot: ", snapshot)
+    }
 
     render() {
         const {playing, currentQuestion, config} = this.state;
@@ -42,7 +51,8 @@ class App extends Component {
                 <div className="controls">
                     <button onClick={this.playPause}>{playing ? "Pause" : "Play"}</button>
                 </div>
-                <Quiz currentConfig={config[currentQuestion]}/>
+                <Question config={config[currentQuestion]}
+                          advanceState={this.advanceToNextState}/>
             </Fragment>
         );
     }

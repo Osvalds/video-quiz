@@ -12,7 +12,7 @@
       "textContentStart": 0,
       "buttons": [
         {
-          "class": "button--link button--start",
+          "class": "button--start",
           "title": "Sākt",
           "link": 1,
           "data-ga-action": "Start button click"

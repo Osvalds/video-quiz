@@ -13,6 +13,7 @@
   outline: none;
   transition: all .3s cubic-bezier(.45, 0, .55, 1);
   min-width: 60px;
+  cursor: pointer;
 
   &--start {
     color: #e6ab60;
