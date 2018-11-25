@@ -1,9 +1,14 @@
 import React, {Component, Fragment} from 'react';
 import ReactPlayer from 'react-player'
 import config from './components/quiz-setup'
+import vtt from 'vtt.js'
+import subtitles from './components/subtitles.vtt'
+
 
 import './App.scss';
 import Question from "./components/Question";
+import {Subtitle} from "./components/Subtitle";
+
 
 class App extends Component {
     state = {
@@ -12,6 +17,8 @@ class App extends Component {
         currentQuestion: 0,
         muted: false,
         showQuestion: true, // first slide must show immediately
+        cues: null,
+        currentCue: null
     };
 
     playPause = () => {
@@ -35,10 +42,41 @@ class App extends Component {
         console.log("onstart", e);
     };
 
+    componentDidMount() {
+        let WebVTT = vtt.WebVTT;
+        let parser = new WebVTT.Parser(window, WebVTT.StringDecoder()),
+            cues = [],
+            regions = [];
+        parser.oncue = function (cue) {
+            cues.push(cue);
+        };
+        parser.onregion = function (region) {
+            regions.push(region);
+        };
+
+        // var div = WebVTT.convertCueToDOMTree(window, cues[0].text);
+        // var divs = WebVTT.processCues(window, cues, document.getElementById("overlay"));
+
+        fetch(subtitles)
+            .then(response => response.text())
+            .then(text => {
+                parser.parse(text);
+                parser.flush();
+                this.setState({cues: cues})
+            })
+    }
+
+    getCurrentCue(cues, currentTime) {
+        let currentCue;
+        [currentCue]= cues.filter(cue => currentTime >= cue.startTime && currentTime <= cue.endTime);
+        return currentCue;
+    }
+
     onProgress = state => {
-        console.log(state);
         const {playedSeconds} = state;
-        const {videoEnd, showQuestion, loopStart} = this.state.config[this.state.currentQuestion];
+        const {videoEnd, showQuestion} = this.state.config[this.state.currentQuestion];
+
+        this.setState({currentCue: this.getCurrentCue(this.state.cues, playedSeconds)})
 
         if (playedSeconds >= showQuestion) {
             this.setState({
@@ -59,13 +97,12 @@ class App extends Component {
     };
 
     render() {
-        const {playing, currentQuestion, config, muted, showQuestion} = this.state;
+        const {playing, currentQuestion, config, muted, showQuestion, currentCue} = this.state;
 
         return (
             <Fragment>
                 <ReactPlayer
                     ref={this.ref}
-
                     url='https://youtu.be/xn978i9opgY'
                     config={{
                         youtube: {
@@ -77,11 +114,6 @@ class App extends Component {
                                 modestbranding: 1,
                                 playsinline: 1
                             }
-                        },
-                        file: {
-                            tracks: [
-                                {kind: 'subtitles', src: 'http://demo.turn.lv/peteris/video-link/captions.vvt', srcLang: 'en', default: true},
-                            ]
                         }
                     }}
                     progressInterval={500}
@@ -99,9 +131,11 @@ class App extends Component {
                     <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
                     <button onClick={(e) => this.advanceToNextState(currentQuestion + 1, e)}>Next</button>
                 </div>
+                <div id="overlay"/>
                 <Question config={config[currentQuestion]}
                           advanceState={this.advanceToNextState}
                           showQuestion={showQuestion}/>
+                <Subtitle cue={currentCue}/>
             </Fragment>
         );
     }
