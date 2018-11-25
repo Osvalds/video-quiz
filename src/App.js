@@ -54,9 +54,6 @@ class App extends Component {
             regions.push(region);
         };
 
-        // var div = WebVTT.convertCueToDOMTree(window, cues[0].text);
-        // var divs = WebVTT.processCues(window, cues, document.getElementById("overlay"));
-
         fetch(subtitles)
             .then(response => response.text())
             .then(text => {
