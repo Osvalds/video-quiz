@@ -32,7 +32,7 @@
       "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
       "videoStart": 10,
       "videoEnd": 71,
-      "loopStart": 70.5,
+      "loopStart": 70,
       "textContentStart": 0,
       "buttons": [
         {

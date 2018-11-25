@@ -35,8 +35,6 @@ class App extends Component {
     };
 
     onProgress = state => {
-        console.log(state);
-        console.log(this.player)
         const {playedSeconds} = state;
         const {videoEnd, loopStart} = this.state.config[this.state.currentQuestion];
 
@@ -60,12 +58,12 @@ class App extends Component {
                 <ReactPlayer
                     ref={this.ref}
 
-                    url='https://youtu.be/hp0hHFa_GXU?ytp-pause-overlay=0'
+                    url='https://youtu.be/xn978i9opgY'
                     config={{
                         youtube: {
                             playerVars: {
                                 showinfo: 0,
-                                controls: 1,
+                                controls: 0,
                                 rel: 0,
                                 disablekb: 1,
                                 modestbranding: 1,
