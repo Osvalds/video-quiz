@@ -71,14 +71,20 @@ class App extends Component {
                         youtube: {
                             playerVars: {
                                 showinfo: 0,
-                                controls: 1,
+                                controls: 0,
                                 rel: 0,
                                 disablekb: 1,
                                 modestbranding: 1,
                                 playsinline: 1
                             }
+                        },
+                        file: {
+                            tracks: [
+                                {kind: 'subtitles', src: 'http://demo.turn.lv/peteris/video-link/captions.vvt', srcLang: 'en', default: true},
+                            ]
                         }
                     }}
+                    progressInterval={500}
                     volume={0.8}
                     playing={playing}
                     width={"auto"}
