@@ -8,7 +8,8 @@
       "video": "https://youtu.be/hp0hHFa_GXU",
       "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
       "videoStart": 0,
-      "videoEnd": 9,
+      "videoEnd": 8,
+      "loopStart": 6,
       "textContentStart": 0,
       "buttons": [
         {
