@@ -2,7 +2,7 @@
   "slides": [
     {
       "id": 0,
-      "type": "question",
+      "type": "intro",
       "title": "Ieejas karte uz Latvijas valsts dibināšanu",
       "description": "Kas īsti notika pirms simts gadiem 18. novembrī? Kā tika pasludināta mūsu valsts? Piedzīvo šo dienu un uzzini visas atbildes.",
       "video": "https://youtu.be/hp0hHFa_GXU",
@@ -25,6 +25,29 @@
     },
     {
       "id": 1,
+      "type": "question",
+      "title": "Ieejas karte uz Latvijas valsts dibināšanu",
+      "description": "Kas īsti notika pirms simts gadiem 18. novembrī? Kā tika pasludināta mūsu valsts? Piedzīvo šo dienu un uzzini visas atbildes.",
+      "video": "https://youtu.be/hp0hHFa_GXU",
+      "videoCaptions": "http://demo.turn.lv/peteris/video-link/captions.vvt",
+      "videoStart": 0,
+      "videoEnd": 9,
+      "textContentStart": 0,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Sākt",
+          "link": 1,
+          "data-ga-action": "Start button click"
+        }
+      ],
+      "nextSlide": false,
+      "slideHeaderHtml": "",
+      "slideFooterHtml": "",
+      "chosenGame": {}
+    },
+    {
+      "id": 2,
       "type": "video",
       "title": "",
       "description": "",

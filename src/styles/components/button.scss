@@ -1,0 +1,36 @@
+.button {
+  border: 2px solid #e6ab60;
+  display: inline-block;
+  background-color: transparent;
+  color: #e6ab60;
+  font-size: 11.36px;
+  line-height: 13px;
+  letter-spacing: 2.54px;
+  padding: 7px 10px 6px;
+  text-align: center;
+  border-radius: 15px;
+  text-transform: uppercase;
+
+  transition: all .3s cubic-bezier(.45, 0, .55, 1);
+  min-width: 60px;
+
+
+  @media (min-width: 1024px) {
+    border-radius: 50px;
+    min-width: 140px;
+    font-size: 14.2px;
+    line-height: 17px;
+    letter-spacing: 3.17px;
+    padding: 13px 20px
+
+  }
+
+  @media (min-width: 1024px) {
+    &:hover {
+      background-color: #8c080c;
+      color: #fff;
+      border-color: #8c080c
+    }
+  }
+
+}

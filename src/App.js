@@ -1,26 +1,23 @@
 import React, {Component, Fragment} from 'react';
 import ReactPlayer from 'react-player'
 import config from './components/quiz-setup'
-
+import Quiz from './components/Quiz.js'
 
 import './App.scss';
 
 class App extends Component {
     state = {
         playing: false,
-        config: config
+        config: config.slides,
+        currentQuestion: 0
     };
-
-    componentDidMount() {
-        console.log(this.state.config);
-    }
 
     playPause = () => {
         this.setState({playing: !this.state.playing})
     };
 
     render() {
-        const {playing} = this.state;
+        const {playing, currentQuestion, config} = this.state;
 
         return (
             <Fragment>
@@ -45,6 +42,7 @@ class App extends Component {
                 <div className="controls">
                     <button onClick={this.playPause}>{playing ? "Pause" : "Play"}</button>
                 </div>
+                <Quiz currentConfig={config[currentQuestion]}/>
             </Fragment>
         );
     }
