@@ -18,7 +18,7 @@ class App extends Component {
         playing: true,
         config: config,
         currentQuestion: 0,
-        muted: false,
+        muted: true,
         showQuestion: true, // first slide must show immediately
         cues: null,
         currentCue: null,
@@ -32,6 +32,11 @@ class App extends Component {
     toggleMuted = () => {
         this.backgroundSound.mute(!this.state.muted);
         this.setState({muted: !this.state.muted})
+    };
+
+    forceStart = () => {
+        this.setState({muted: false})
+        this.advanceToNextState(0);
     };
 
     advanceToNextState = (nextState) => {
@@ -55,7 +60,6 @@ class App extends Component {
         parser.onregion = function (region) {
             regions.push(region);
         };
-        console.log(subtitles)
         fetch(subtitles)
             .then(response => response.text())
             .then(text => {
@@ -133,6 +137,7 @@ class App extends Component {
                     <button onClick={this.playPause}>{playing ? "Pause" : "Play"}</button>
                     <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
                     <button onClick={(e) => this.advanceToNextState(currentQuestion + 1, e)}>Next</button>
+                    <div className="force-start" onClick={this.forceStart}>Force Start</div>
                 </div>
                 <ReactHowler src={config.audioBgr}
                              playing={true}

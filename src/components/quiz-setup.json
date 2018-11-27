@@ -13,6 +13,7 @@
       "description": "Vai Tu proti zaudēt?",
       "videoStart": 0,
       "videoEnd": 8,
+      "showQuestion": 0,
       "videoStartFrame": 0,
       "videoEndFrame": 200,
       "nextVideoID": null,
