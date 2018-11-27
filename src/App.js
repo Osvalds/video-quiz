@@ -13,7 +13,7 @@ import {Subtitle} from "./components/Subtitle";
 class App extends Component {
     state = {
         playing: true,
-        config: config.slides,
+        config: config,
         currentQuestion: 0,
         muted: false,
         showQuestion: true, // first slide must show immediately
@@ -35,7 +35,7 @@ class App extends Component {
             showQuestion: false,
             playing: true
         });
-        this.player.seekTo(this.state.config[nextState].videoStart);
+        this.player.seekTo(this.state.config.slides[nextState].videoStart);
     };
 
     onFragmentStart = e => {
@@ -71,7 +71,7 @@ class App extends Component {
 
     onProgress = state => {
         const {playedSeconds} = state;
-        const {videoEnd, showQuestion} = this.state.config[this.state.currentQuestion];
+        const {videoEnd, showQuestion} = this.state.config.slides[this.state.currentQuestion];
 
         this.setState({currentCue: this.getCurrentCue(this.state.cues, playedSeconds)})
 
@@ -95,12 +95,11 @@ class App extends Component {
 
     render() {
         const {playing, currentQuestion, config, muted, showQuestion, currentCue} = this.state;
-
         return (
             <Fragment>
                 <ReactPlayer
                     ref={this.ref}
-                    url='https://youtu.be/xn978i9opgY'
+                    url={config.videoUrl}
                     config={{
                         youtube: {
                             playerVars: {
@@ -129,7 +128,7 @@ class App extends Component {
                     <button onClick={(e) => this.advanceToNextState(currentQuestion + 1, e)}>Next</button>
                 </div>
                 <div id="overlay"/>
-                <Question config={config[currentQuestion]}
+                <Question config={config.slides[currentQuestion]}
                           advanceState={this.advanceToNextState}
                           showQuestion={showQuestion}/>
                 <Subtitle cue={currentCue}/>

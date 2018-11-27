@@ -1,197 +1,745 @@
 {
-  "slides": [
+  "videoUrl":"https://youtu.be/_uUNrc7sv3k",
+  "audioBgr":"",
+  "captionVTT": "",
+  "googleAnalyticsID":"",
+  "slides":
+  [
     {
       "id": 0,
+      "Filename": "intro_ienak.mp4",
       "type": "intro",
-      "title": "Ieejas karte uz Latvijas valsts dibināšanu",
-      "description": "Kas īsti notika pirms simts gadiem 18. novembrī? Kā tika pasludināta mūsu valsts? Piedzīvo šo dienu un uzzini visas atbildes.",
+      "title": "Tēls mētā/virpina bumbiņu",
+      "description": "Vai Tu proti zaudēt?",
       "videoStart": 0,
       "videoEnd": 8,
-      "textContentStart": 0,
+      "videoStartFrame": 0,
+      "videoEndFrame": 200,
+      "nextVideoID": null,
       "buttons": [
         {
-          "class": "button--start",
-          "title": "Sākt",
+          "class": "button--link",
+          "title": "Sākt spēli",
           "link": 1,
-          "ga-action": "Start button click"
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 1,
+      "Filename": "aiziet_pie_galda_no_intro.mp4",
       "type": "question",
-      "title": "Ko ieceļ par pagaidu valdības vadītāju?",
-      "videoStart": 10,
-      "showQuestion": 69,
-      "videoEnd": 70,
+      "title": "Tēls apsēžas pie galda\nKo spēlēsim?",
+      "description": "",
+      "videoStart": 8,
+      "videoEnd": 22,
+      "videoStartFrame": 200,
+      "videoEndFrame": 550,
+      "nextVideoID": null,
       "buttons": [
         {
           "class": "button--link",
-          "title": "Gustavu Zemgalu",
-          "link": 2,
-          "ga-action": "Gustavs Zemgals click"
+          "title": "Acīte",
+          "link": 1,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "Karlis Ulmanis",
-          "link": 2,
-          "ga-action": "Karlis Ulmanis click"
+          "title": "Kasi un laimē",
+          "link": 1,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "Zigfridu Annu Meirovicu",
+          "title": "Paslēpes",
           "link": 2,
-          "ga-action": "Zigfrids Anna Meirovis"
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 2,
-      "type": "question",
-      "title": "Cik ieejas kartes tika izgatavotas?",
-      "videoStart": 72.2,
-      "showQuestion": 101,
-      "videoEnd": 102,
+      "Filename": "aiziet_tirs.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 26,
+      "videoEnd": 29,
+      "videoStartFrame": 650,
+      "videoEndFrame": 725,
+      "nextVideoID": 3,
       "buttons": [
         {
           "class": "button--link",
-          "title": "1200",
-          "link": 3,
-          "ga-action": "Gustavs Zemgals click"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "1000",
-          "link": 3,
-          "ga-action": "1200"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "800",
-          "link": 3,
-          "ga-action": "800"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 3,
+      "Filename": "glazes_maisa_pirmais.mp4",
       "type": "question",
-      "title": "Kapēc uz skatuves bija tik daudz telpaugu?",
-      "videoStart": 104.5,
-      "showQuestion": 171,
-      "videoEnd": 172,
+      "title": "",
+      "description": "",
+      "videoStart": 29,
+      "videoEnd": 60,
+      "videoStartFrame": 725,
+      "videoEndFrame": 1500,
+      "nextVideoID": null,
       "buttons": [
         {
           "class": "button--link",
-          "title": "Tolaik telpaugi bija modē",
+          "title": "Glāze 1",
           "link": 4,
-          "ga-action": "Gustavs Zemgals click"
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "Ko atrada, to uzlika",
-          "link": 4,
-          "ga-action": "1200"
+          "title": "Glāze 2",
+          "link": 5,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "Ulmanis tā gribēja",
-          "link": 4,
-          "ga-action": "1200"
+          "title": "Glāze 3",
+          "link": 6,
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 4,
-      "type": "question",
-      "title": "Cik Tautas padomes pārstāvju piedalījās Latvijas valsts proklamēšanā?",
-      "videoStart": 175.1,
-      "showQuestion": 225,
-      "videoEnd": 226,
+      "Filename": "glaze_viens_pilns.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 127,
+      "videoEnd": 131.36,
+      "videoStartFrame": 3175,
+      "videoEndFrame": 3284,
+      "nextVideoID": 8,
       "buttons": [
         {
           "class": "button--link",
-          "title": "38",
-          "link": 5,
-          "ga-action": "Gustavs Zemgals click"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "Ko atrada, to uzlika",
-          "link": 5,
-          "ga-action": "40"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "Ulmanis tā gribēja",
-          "link": 5,
-          "ga-action": "42"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 5,
-      "type": "question",
-      "title": "Cik reizes pēc kārtas tika nodziedāta Latvijas valsts himna?",
-      "videoStart": 229.2,
-      "showQuestion": 296,
-      "videoEnd": 297,
+      "Filename": "glaze_divi_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 140,
+      "videoEnd": 144,
+      "videoStartFrame": 3500,
+      "videoEndFrame": 3600,
+      "nextVideoID": 7,
       "buttons": [
         {
           "class": "button--link",
-          "title": "1",
-          "link": 6,
-          "ga-action": "1"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "3",
-          "link": 6,
-          "ga-action": "3"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         },
         {
           "class": "button--link",
-          "title": "6",
-          "link": 6,
-          "ga-action": "6"
+          "title": "",
+          "link": null,
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 6,
-      "type": "question",
-      "title": "Noklausies dažas no runām",
-      "videoStart": 300,
-      "showQuestion": 345,
-      "videoEnd": 346,
+      "Filename": "glaze_tris_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 149,
+      "videoEnd": 152,
+      "videoStartFrame": 3725,
+      "videoEndFrame": 3800,
+      "nextVideoID": 7,
       "buttons": [
         {
           "class": "button--link",
-          "title": "Tālāk",
-          "link": 7,
-          "ga-action": "1"
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
         }
       ]
     },
     {
       "id": 7,
-      "type": "outro",
-      "title": "Saules mūžu Latvijai!",
-      "description": "18. novembrī svinam valsts simto dzimšanas dienu. Iepazīsties ar svētku programmu.",
-      "videoStart": 347,
-      "showQuestion": 345,
-      "videoEnd": 352,
+      "Filename": "neuzmineja_tirs.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 110,
+      "videoEnd": 113,
+      "videoStartFrame": 2750,
+      "videoEndFrame": 2825,
+      "nextVideoID": 22,
       "buttons": [
         {
           "class": "button--link",
-          "title": "Tālāk",
-          "link": 7,
-          "ga-action": "1"
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "Filename": "tev_izdevas_tirs.mp4",
+      "type": "question",
+      "title": "",
+      "description": "",
+      "videoStart": 124,
+      "videoEnd": 126.4,
+      "videoStartFrame": 3100,
+      "videoEndFrame": 3160,
+      "nextVideoID": null,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Turpināt",
+          "link": 10,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "Beigt spēli",
+          "link": 9,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "Filename": "neturpina_speli_tuvplans.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 173,
+      "videoEnd": 178,
+      "videoStartFrame": 4325,
+      "videoEndFrame": 4450,
+      "nextVideoID": 22,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "Filename": "otrais_maisijums.mp4",
+      "type": "question",
+      "title": "",
+      "description": "",
+      "videoStart": 65,
+      "videoEnd": 80,
+      "videoStartFrame": 1625,
+      "videoEndFrame": 2000,
+      "nextVideoID": null,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Glāze 1",
+          "link": 11,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "Glāze 2",
+          "link": 12,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "Glāze 3",
+          "link": 13,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "Filename": "glaze_viens_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 132,
+      "videoEnd": 135.96,
+      "videoStartFrame": 3300,
+      "videoEndFrame": 3399,
+      "nextVideoID": 14,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "Filename": "glaze_divi_pilns.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 136,
+      "videoEnd": 139,
+      "videoStartFrame": 3400,
+      "videoEndFrame": 3475,
+      "nextVideoID": 15,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "Filename": "glaze_tris_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 149,
+      "videoEnd": 152,
+      "videoStartFrame": 3725,
+      "videoEndFrame": 3800,
+      "nextVideoID": 14,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "Filename": "neuzmineja.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 115,
+      "videoEnd": 120,
+      "videoStartFrame": 2875,
+      "videoEndFrame": 3000,
+      "nextVideoID": 22,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "Filename": "uzmineja_rezultats.mp4",
+      "type": "question",
+      "title": "",
+      "description": "",
+      "videoStart": 161,
+      "videoEnd": 169,
+      "videoStartFrame": 4025,
+      "videoEndFrame": 4225,
+      "nextVideoID": null,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Turpināt",
+          "link": 17,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "Beigt spēli",
+          "link": 16,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "Filename": "neturpina_speli_tuvplans.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 173,
+      "videoEnd": 178,
+      "videoStartFrame": 4325,
+      "videoEndFrame": 4450,
+      "nextVideoID": 22,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "Filename": "tresais_maisijums.mp4",
+      "type": "question",
+      "title": "",
+      "description": "",
+      "videoStart": 86,
+      "videoEnd": 105,
+      "videoStartFrame": 2150,
+      "videoEndFrame": 2625,
+      "nextVideoID": null,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "Glāze 1",
+          "link": 18,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "Glāze 2",
+          "link": 19,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "Glāze 3",
+          "link": 20,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "Filename": "glaze_viens_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 132,
+      "videoEnd": 135.96,
+      "videoStartFrame": 3300,
+      "videoEndFrame": 3399,
+      "nextVideoID": 21,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "Filename": "glaze_divi_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 140,
+      "videoEnd": 144,
+      "videoStartFrame": 3500,
+      "videoEndFrame": 3600,
+      "nextVideoID": 21,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "Filename": "glaze_tris_tukss.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 149,
+      "videoEnd": 152,
+      "videoStartFrame": 3725,
+      "videoEndFrame": 3800,
+      "nextVideoID": 21,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "Filename": "neuzmineja.mp4",
+      "type": "nextVideo",
+      "title": "",
+      "description": "",
+      "videoStart": 115,
+      "videoEnd": 120,
+      "videoStartFrame": 2875,
+      "videoEndFrame": 3000,
+      "nextVideoID": 22,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "Filename": "spele_beigusies_kopskats.mp4",
+      "type": "outro",
+      "title": "",
+      "description": "",
+      "videoStart": 179,
+      "videoEnd": 182,
+      "videoStartFrame": 4475,
+      "videoEndFrame": 4550,
+      "nextVideoID": null,
+      "buttons": [
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
+        },
+        {
+          "class": "button--link",
+          "title": "",
+          "link": null,
+          "ga-action": ""
         }
       ]
     }
-
-
-
   ]
 }
