@@ -76,7 +76,6 @@ class App extends Component {
     }
 
     onProgress = playerState => {
-        console.log(playerState)
         const {playedSeconds} = playerState;
         const {currentQuestion, cues, config} = this.state;
         const {videoEnd, showQuestion, type, nextVideoID} = config.slides[currentQuestion];
