@@ -1,15 +1,24 @@
 import React, {Component} from 'react'
 
+/**
+ * @return {null}
+ */
+function ButtonItem({button, advanceState}) {
+    return <li className="question__answer-item">
+        <button className={`button ${button.class}`}
+                onClick={(e) => advanceState(button.link, e)}>
+            {button.title}
+        </button>
+    </li>
+}
+
 function ListButtons(props) {
-    const buttonsList = props.buttons.map((button) =>
-        <li className="question__answer-item"
-            key={button.title}>
-            <button className={`button ${button.class}`}
-                    onClick={(e) => props.advanceState(button.link, e)}>
-                {button.title}
-            </button>
-        </li>
-    );
+    const buttonsList = props.buttons
+        // remove empty buttons from the list
+        .filter(button => button.link !== null && button.title !== "")
+        .map((button) =>
+            <ButtonItem key={button.title} button={button} advanceState={props.advanceState}/>
+        );
 
     return (
         <ul className="question__answer-list">{buttonsList}</ul>
