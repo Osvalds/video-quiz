@@ -2,7 +2,7 @@
   "name": "video-quiz",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://osvalds.github.io/video-quiz",
+  "homepage": "https://osvalds.github.io/video-quiz",
   "dependencies": {
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
