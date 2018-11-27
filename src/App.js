@@ -10,6 +10,11 @@ import Question from "./components/Question";
 import {Subtitle} from "./components/Subtitle";
 
 
+const TYPE_NEXTVIDEO = "nextVideo";
+const TYPE_QUESTION = "question";
+const TYPE_OUTRO = "outro";
+const TYPE_INTRO = "intro";
+
 class App extends Component {
     state = {
         playing: true,
@@ -43,6 +48,7 @@ class App extends Component {
     };
 
     componentDidMount() {
+        // Taken from Mozilla's github
         let WebVTT = vtt.WebVTT;
         let parser = new WebVTT.Parser(window, WebVTT.StringDecoder()),
             cues = [],
@@ -69,23 +75,35 @@ class App extends Component {
         return currentCue;
     }
 
-    onProgress = state => {
-        const {playedSeconds} = state;
-        const {videoEnd, showQuestion} = this.state.config.slides[this.state.currentQuestion];
+    onProgress = playerState => {
+        console.log(playerState)
+        const {playedSeconds} = playerState;
+        const {currentQuestion, cues, config} = this.state;
+        const {videoEnd, showQuestion, type, nextVideoID} = config.slides[currentQuestion];
 
-        this.setState({currentCue: this.getCurrentCue(this.state.cues, playedSeconds)})
+        // handles which subtitle should be shown, doesn't depend on the slide type
+        this.setState({currentCue: this.getCurrentCue(cues, playedSeconds)});
 
-        if (playedSeconds >= showQuestion) {
-            this.setState({
-                showQuestion: true
-            })
-        }
+        switch(type) {
+            case TYPE_NEXTVIDEO:
+                if (playedSeconds >= videoEnd) {
+                    this.advanceToNextState(nextVideoID);
+                }
+                break;
+            default:
+                if (playedSeconds >= showQuestion) {
+                    this.setState({
+                        showQuestion: true
+                    })
+                }
 
-        if (playedSeconds >= videoEnd) {
-            this.setState({
-                showQuestion: true,
-                playing: false
-            });
+                if (playedSeconds >= videoEnd) {
+                    this.setState({
+                        showQuestion: true,
+                        playing: false
+                    });
+                }
+
         }
     };
 
@@ -112,7 +130,7 @@ class App extends Component {
                             }
                         }
                     }}
-                    progressInterval={500}
+                    progressInterval={100}
                     volume={0.8}
                     playing={playing}
                     width={"auto"}
