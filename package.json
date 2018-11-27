@@ -25,6 +25,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "react-howler": "^3.7.3",
     "vtt.js": "^0.13.0"
   }
 }

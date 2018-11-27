@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import config from './components/quiz-setup'
 import vtt from 'vtt.js'
 import subtitles from './components/subtitles.vtt'
-
+import ReactHowler from 'react-howler'
 
 import './App.scss';
 import Question from "./components/Question";
@@ -11,11 +11,9 @@ import {Subtitle} from "./components/Subtitle";
 
 
 const TYPE_NEXTVIDEO = "nextVideo";
-const TYPE_QUESTION = "question";
-const TYPE_OUTRO = "outro";
-const TYPE_INTRO = "intro";
 
 class App extends Component {
+
     state = {
         playing: true,
         config: config,
@@ -23,7 +21,8 @@ class App extends Component {
         muted: false,
         showQuestion: true, // first slide must show immediately
         cues: null,
-        currentCue: null
+        currentCue: null,
+        volume: 0.8,
     };
 
     playPause = () => {
@@ -31,6 +30,7 @@ class App extends Component {
     };
 
     toggleMuted = () => {
+        this.backgroundSound.mute(!this.state.muted);
         this.setState({muted: !this.state.muted})
     };
 
@@ -71,7 +71,7 @@ class App extends Component {
 
     getCurrentCue(cues, currentTime) {
         let currentCue;
-        [currentCue]= cues.filter(cue => currentTime >= cue.startTime && currentTime <= cue.endTime);
+        [currentCue] = cues.filter(cue => currentTime >= cue.startTime && currentTime <= cue.endTime);
         return currentCue;
     }
 
@@ -83,7 +83,7 @@ class App extends Component {
         // handles which subtitle should be shown, doesn't depend on the slide type
         this.setState({currentCue: this.getCurrentCue(cues, playedSeconds)});
 
-        switch(type) {
+        switch (type) {
             case TYPE_NEXTVIDEO:
                 if (playedSeconds >= videoEnd) {
                     this.advanceToNextState(nextVideoID);
@@ -102,20 +102,15 @@ class App extends Component {
                         playing: false
                     });
                 }
-
         }
     };
 
-    ref = player => {
-        this.player = player
-    };
-
     render() {
-        const {playing, currentQuestion, config, muted, showQuestion, currentCue} = this.state;
+        const {playing, currentQuestion, config, muted, showQuestion, currentCue, volume} = this.state;
         return (
             <Fragment>
                 <ReactPlayer
-                    ref={this.ref}
+                    ref={(ref) => (this.player = ref)}
                     url={config.videoUrl}
                     config={{
                         youtube: {
@@ -130,7 +125,7 @@ class App extends Component {
                         }
                     }}
                     progressInterval={100}
-                    volume={0.8}
+                    volume={volume}
                     playing={playing}
                     width={"auto"}
                     height={"auto"}
@@ -144,7 +139,12 @@ class App extends Component {
                     <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
                     <button onClick={(e) => this.advanceToNextState(currentQuestion + 1, e)}>Next</button>
                 </div>
-                <div id="overlay"/>
+                <ReactHowler src={config.audioBgr}
+                             playing={true}
+                             loop={true}
+                             volume={volume}
+                             mute={muted}
+                             ref={(ref) => (this.backgroundSound = ref)}/>
                 <Question config={config.slides[currentQuestion]}
                           advanceState={this.advanceToNextState}
                           showQuestion={showQuestion}/>
