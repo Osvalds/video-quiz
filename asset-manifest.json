@@ -1,0 +1,14 @@
+{
+  "main.css": "/video-quiz/static/css/main.30ca67a2.chunk.css",
+  "main.js": "/video-quiz/static/js/main.8e6f3959.chunk.js",
+  "main.js.map": "/video-quiz/static/js/main.8e6f3959.chunk.js.map",
+  "static/js/1.f97a8635.chunk.js": "/video-quiz/static/js/1.f97a8635.chunk.js",
+  "static/js/1.f97a8635.chunk.js.map": "/video-quiz/static/js/1.f97a8635.chunk.js.map",
+  "runtime~main.js": "/video-quiz/static/js/runtime~main.49252ecb.js",
+  "runtime~main.js.map": "/video-quiz/static/js/runtime~main.49252ecb.js.map",
+  "static/media/subtitles.vtt": "/video-quiz/static/media/subtitles.966215be.vtt",
+  "static/css/main.30ca67a2.chunk.css.map": "/video-quiz/static/css/main.30ca67a2.chunk.css.map",
+  "index.html": "/video-quiz/index.html",
+  "precache-manifest.b6fb676d429568b42d02564e1dee4062.js": "/video-quiz/precache-manifest.b6fb676d429568b42d02564e1dee4062.js",
+  "service-worker.js": "/video-quiz/service-worker.js"
+}
