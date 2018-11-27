@@ -43,10 +43,6 @@ class App extends Component {
         this.player.seekTo(this.state.config.slides[nextState].videoStart);
     };
 
-    onFragmentStart = e => {
-        console.log("onstart", e);
-    };
-
     componentDidMount() {
         // Taken from Mozilla's github
         let WebVTT = vtt.WebVTT;
@@ -59,7 +55,7 @@ class App extends Component {
         parser.onregion = function (region) {
             regions.push(region);
         };
-
+        console.log(subtitles)
         fetch(subtitles)
             .then(response => response.text())
             .then(text => {
@@ -131,7 +127,6 @@ class App extends Component {
                     height={"auto"}
                     muted={muted}
                     className={"player"}
-                    onStart={this.onFragmentStart}
                     onProgress={this.onProgress}
                 />
                 <div className="controls">
