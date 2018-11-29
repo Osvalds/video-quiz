@@ -6887,6 +6887,10 @@ react-error-overlay@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.0.tgz#c516995a5652e7bfbed8b497910d5280df74a7e8"
 
+react-ga@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.5.6.tgz#5a2e2fa78ae298e5b0a4498210eeec631ef1b562"
+
 react-howler@^3.7.3:
   version "3.7.3"
   resolved "https://registry.yarnpkg.com/react-howler/-/react-howler-3.7.3.tgz#450c95711472b4c67f8ef7d2a06b85ba78fec488"

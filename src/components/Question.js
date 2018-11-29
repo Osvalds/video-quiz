@@ -3,10 +3,10 @@ import React, {Component} from 'react'
 /**
  * @return {null}
  */
-function ButtonItem({button, advanceState}) {
+function ButtonItem({button, handleButtonClick}) {
     return <li className="question__answer-item">
         <button className={`button ${button.class}`}
-                onClick={(e) => advanceState(button.link, e)}>
+                onClick={(e) => handleButtonClick(button, e)}>
             {button.title}
         </button>
     </li>
@@ -17,7 +17,7 @@ function ListButtons(props) {
         // remove empty buttons from the list
         .filter(button => button.link !== null && button.title !== "")
         .map((button) =>
-            <ButtonItem key={button.title} button={button} advanceState={props.advanceState}/>
+            <ButtonItem key={button.title} button={button} handleButtonClick={props.handleButtonClick}/>
         );
 
     return (
@@ -34,7 +34,7 @@ function Intro({props}) {
         <div className="question__description">
             {description}
         </div>
-        <ListButtons buttons={buttons} advanceState={props.advanceState}/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick}/>
     </section>
 }
 
@@ -42,7 +42,7 @@ function RegularQuestion({props}) {
     const {title, buttons} = props.config;
     return <section className="question">
         <h2 className="question__title">{title}</h2>
-        <ListButtons buttons={buttons} advanceState={props.advanceState}/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick}/>
     </section>
 }
 
@@ -55,7 +55,7 @@ function Outro({props}) {
         <div className="question__description">
             {description}
         </div>
-        <ListButtons buttons={buttons} advanceState={props.advanceState}/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick}/>
     </section>
 }
 
@@ -68,7 +68,7 @@ export default class Question extends Component {
                 case "intro":
                     return <Intro props={this.props}/>;
                 case "outro":
-                    return <Outro props={this.props}/>
+                    return <Outro props={this.props}/>;
                 case "question":
                     return <RegularQuestion props={this.props}/>;
                 default:

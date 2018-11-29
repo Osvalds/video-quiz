@@ -4,6 +4,7 @@ import config from './components/quiz-setup'
 import vtt from 'vtt.js'
 import subtitles from './components/subtitles.vtt'
 import ReactHowler from 'react-howler'
+import ReactGA from 'react-ga'
 
 import './App.scss';
 import Question from "./components/Question";
@@ -48,7 +49,31 @@ class App extends Component {
         this.player.seekTo(this.state.config.slides[nextState].videoStart);
     };
 
+    initializeGa = (gaID) => {
+        if (gaID !== "") {
+            ReactGA.initialize(gaID);
+            // Taken from example here: https://github.com/react-ga/react-ga#with-npm
+            ReactGA.pageview(window.location.pathname + window.location.search);
+        }
+    };
+
+    // There will propably be more params here, like "Category" and "Label" not just action
+    trackGaEvent = gaAction => {
+        if(gaAction !== "") {
+            ReactGA.event({
+                action: gaAction,
+                category: "fooo" // there must be something more meaningful here
+            });
+        }
+    };
+
+    handleQuizButtonClick = ({link, title, "ga-action": gaAction}) => {
+        this.advanceToNextState(link);
+        this.trackGaEvent(gaAction);
+    };
+
     componentDidMount() {
+        this.initializeGa(this.state.config.googleAnalyticsID);
         // Taken from Mozilla's github
         let WebVTT = vtt.WebVTT;
         let parser = new WebVTT.Parser(window, WebVTT.StringDecoder()),
@@ -146,7 +171,7 @@ class App extends Component {
                              mute={muted}
                              ref={(ref) => (this.backgroundSound = ref)}/>
                 <Question config={config.slides[currentQuestion]}
-                          advanceState={this.advanceToNextState}
+                          handleButtonClick={this.handleQuizButtonClick}
                           showQuestion={showQuestion}/>
                 <Subtitle cue={currentCue}/>
             </Fragment>
