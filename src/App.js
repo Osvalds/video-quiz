@@ -1,17 +1,23 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import ReactPlayer from 'react-player'
 import config from './components/quiz-setup'
 import vtt from 'vtt.js'
 import subtitles from './components/subtitles.vtt'
 import ReactHowler from 'react-howler'
 import ReactGA from 'react-ga'
+import {HotKeys} from "react-hotkeys";
 
 import './App.scss';
 import Question from "./components/Question";
 import {Subtitle} from "./components/Subtitle";
+import {Debug} from "./components/Debug";
 
 
 const TYPE_NEXTVIDEO = "nextVideo";
+
+const keyMap = {
+    toggleDebug: 'command+shift+1'
+};
 
 class App extends Component {
 
@@ -24,10 +30,19 @@ class App extends Component {
         cues: null,
         currentCue: null,
         volume: 0.8,
+        debug: false,
+        audioPlaying: true
+    };
+
+    onToggleDebug = () => {
+        this.setState({debug: !this.state.debug})
     };
 
     playPause = () => {
-        this.setState({playing: !this.state.playing})
+        this.setState({
+            playing: !this.state.playing,
+            audioPlaying: !this.state.audioPlaying
+        });
     };
 
     toggleMuted = () => {
@@ -49,6 +64,15 @@ class App extends Component {
         this.player.seekTo(this.state.config.slides[nextState].videoStart);
     };
 
+    advanceToNextQuestionSlide = (nextState) => {
+        this.setState({
+            currentQuestion: nextState,
+            showQuestion: true,
+            playing: true
+        });
+        this.player.seekTo(this.state.config.slides[nextState].videoEnd - 1);
+    };
+
     initializeGa = (gaID) => {
         if (gaID !== "") {
             ReactGA.initialize(gaID);
@@ -59,7 +83,7 @@ class App extends Component {
 
     // There will propably be more params here, like "Category" and "Label" not just action
     trackGaEvent = gaAction => {
-        if(gaAction !== "") {
+        if (gaAction !== "") {
             ReactGA.event({
                 action: gaAction,
                 category: "fooo" // there must be something more meaningful here
@@ -131,9 +155,15 @@ class App extends Component {
     };
 
     render() {
-        const {playing, currentQuestion, config, muted, showQuestion, currentCue, volume} = this.state;
+        const {playing, currentQuestion, config, muted, showQuestion, currentCue, volume, audioPlaying} = this.state;
+        const handlers = {
+            'toggleDebug': this.onToggleDebug
+        };
         return (
-            <Fragment>
+            <HotKeys keyMap={keyMap}
+                     handlers={handlers}
+                     focused={true}>
+
                 <ReactPlayer
                     ref={(ref) => (this.player = ref)}
                     url={config.videoUrl}
@@ -158,14 +188,15 @@ class App extends Component {
                     className={"player"}
                     onProgress={this.onProgress}
                 />
-                <div className="controls">
-                    <button onClick={this.playPause}>{playing ? "Pause" : "Play"}</button>
-                    <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
-                    <button onClick={(e) => this.advanceToNextState(currentQuestion + 1, e)}>Next</button>
-                    <div className="force-start" onClick={this.forceStart}>Force Start</div>
-                </div>
+                <Debug visible={this.state.debug}
+                       state={this.state}
+                       onForceStart={this.forceStart}
+                       onPlayPause={(e) => this.playPause(e)}
+                       onToggleMuted={this.toggleMuted}
+                       onSlideButtonClick={this.advanceToNextQuestionSlide}
+                       onNext={(e) => this.advanceToNextQuestionSlide(currentQuestion + 1, e)}/>
                 <ReactHowler src={config.audioBgr}
-                             playing={true}
+                             playing={audioPlaying}
                              loop={true}
                              volume={volume}
                              mute={muted}
@@ -174,7 +205,8 @@ class App extends Component {
                           handleButtonClick={this.handleQuizButtonClick}
                           showQuestion={showQuestion}/>
                 <Subtitle cue={currentCue}/>
-            </Fragment>
+                <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
+            </HotKeys>
         );
     }
 }
