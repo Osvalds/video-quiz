@@ -65,12 +65,18 @@ class App extends Component {
     };
 
     advanceToNextQuestionSlide = (nextState) => {
-        this.setState({
-            currentQuestion: nextState,
-            showQuestion: true,
-            playing: true
-        });
-        this.player.seekTo(this.state.config.slides[nextState].videoEnd - 1);
+        let nextSlide = this.state.config.slides[nextState];
+        // if the type is "NextVideo" there's not gonna be any question there so we can just skip it
+        if (nextSlide.type === TYPE_NEXTVIDEO) {
+            this.advanceToNextQuestionSlide(nextSlide.nextVideoID)
+        } else {
+            this.setState({
+                currentQuestion: nextState,
+                showQuestion: true,
+                playing: true
+            });
+            this.player.seekTo(this.state.config.slides[nextState].videoEnd - 1);
+        }
     };
 
     initializeGa = (gaID) => {
