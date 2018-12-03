@@ -215,7 +215,7 @@ class App extends Component {
                        onSlideButtonClick={this.advanceToNextQuestionSlide}
                        onNext={(e) => this.advanceToNextQuestionSlide(currentQuestion + 1, e)}/>
                 {/*<ReactHowler src={config.audioBgr}*/}
-                <ReactHowler src={"/media/muzons_fonam.mp3"}
+                <ReactHowler src={process.env.PUBLIC_URL + "/media/muzons_fonam.mp3"}
                              playing={audioPlaying}
                              loop={true}
                              volume={volume}
