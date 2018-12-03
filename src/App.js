@@ -110,6 +110,9 @@ class App extends Component {
         this.initializeGa(this.state.config.googleAnalyticsID);
         // Taken from Mozilla's github
         let WebVTT = vtt.WebVTT;
+        // thanks, Safari
+        const oldVTTCue = window.VTTCue;
+
         let parser = new WebVTT.Parser(window, WebVTT.StringDecoder()),
             cues = [],
             regions = [];
@@ -119,13 +122,20 @@ class App extends Component {
         parser.onregion = function (region) {
             regions.push(region);
         };
-        fetch(subtitles)
-            .then(response => response.text())
-            .then(text => {
-                parser.parse(text);
-                parser.flush();
-                this.setState({cues: cues})
-            })
+        try {
+            console.log(oldVTTCue);
+            window.VTTCue = vtt.VTTCue;
+            fetch(subtitles)
+                .then(response => response.text())
+                .then(text => {
+                    parser.parse(text);
+                    parser.flush();
+                    this.setState({cues: cues})
+                })
+        } finally {
+            window.VTTCue = oldVTTCue;
+        }
+
     }
 
     getCurrentCue(cues, currentTime) {
