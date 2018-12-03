@@ -123,7 +123,6 @@ class App extends Component {
             regions.push(region);
         };
         try {
-            console.log(oldVTTCue);
             window.VTTCue = vtt.VTTCue;
             fetch(subtitles)
                 .then(response => response.text())
@@ -215,7 +214,8 @@ class App extends Component {
                        onToggleMuted={this.toggleMuted}
                        onSlideButtonClick={this.advanceToNextQuestionSlide}
                        onNext={(e) => this.advanceToNextQuestionSlide(currentQuestion + 1, e)}/>
-                <ReactHowler src={config.audioBgr}
+                {/*<ReactHowler src={config.audioBgr}*/}
+                <ReactHowler src={"/media/muzons_fonam.mp3"}
                              playing={audioPlaying}
                              loop={true}
                              volume={volume}
