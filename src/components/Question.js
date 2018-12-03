@@ -3,10 +3,10 @@ import React, {Component} from 'react'
 /**
  * @return {null}
  */
-function ButtonItem({button, handleButtonClick}) {
+function ButtonItem({button, handleButtonClick, questionType}) {
     return <li className="question__answer-item">
         <button className={`button ${button.class}`}
-                onClick={(e) => handleButtonClick(button, e)}>
+                onClick={(e) => handleButtonClick(button, questionType, e)}>
             {button.title}
         </button>
     </li>
@@ -17,7 +17,7 @@ function ListButtons(props) {
         // remove empty buttons from the list
         .filter(button => button.link !== null && button.title !== "")
         .map((button) =>
-            <ButtonItem key={button.title} button={button} handleButtonClick={props.handleButtonClick}/>
+            <ButtonItem key={button.title} button={button} handleButtonClick={props.handleButtonClick} questionType={props.questionType}/>
         );
 
     return (
@@ -26,7 +26,7 @@ function ListButtons(props) {
 }
 
 function Intro({props}) {
-    const {title, description, buttons} = props.config;
+    const {title, description, buttons, type} = props.config;
     return <section className="question">
         <h2 className="question__title">
             {title}
@@ -34,7 +34,7 @@ function Intro({props}) {
         <div className="question__description">
             {description}
         </div>
-        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick}/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick} questionType={type}/>
     </section>
 }
 
@@ -42,7 +42,7 @@ function RegularQuestion({props}) {
     const {title, buttons} = props.config;
     return <section className="question">
         <h2 className="question__title">{title}</h2>
-        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick}/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick} type/>
     </section>
 }
 

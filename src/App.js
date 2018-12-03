@@ -45,7 +45,7 @@ class App extends Component {
         });
     };
 
-    toggleMuted = () => {
+    toggleMuted = (muted = !this.state.muted) => {
         this.backgroundSound.mute(!this.state.muted);
         this.setState({muted: !this.state.muted})
     };
@@ -97,7 +97,11 @@ class App extends Component {
         }
     };
 
-    handleQuizButtonClick = ({link, title, "ga-action": gaAction}) => {
+    handleQuizButtonClick = ({link, title, "ga-action": gaAction}, questionType) => {
+        if (questionType === "intro") {
+            this.toggleMuted(false);
+        }
+        // console.log("quesiton type", questionType);
         this.advanceToNextState(link);
         this.trackGaEvent(gaAction);
     };
