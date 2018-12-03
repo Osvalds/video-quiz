@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/video-quiz/static/js/runtime~main.49252ecb.js"
   },
   {
-    "revision": "2afc8693e6975a4eea7c",
-    "url": "/video-quiz/static/js/main.2afc8693.chunk.js"
+    "revision": "b872a04d743c48e9459e",
+    "url": "/video-quiz/static/js/main.b872a04d.chunk.js"
   },
   {
     "revision": "716190bc3ab53ccf1160",
     "url": "/video-quiz/static/js/1.716190bc.chunk.js"
   },
   {
-    "revision": "2afc8693e6975a4eea7c",
+    "revision": "b872a04d743c48e9459e",
     "url": "/video-quiz/static/css/main.20edf51a.chunk.css"
   },
   {
-    "revision": "335a968334b195c9cd8d8867c4ddc86a",
+    "revision": "ca5a048c1386b4820f611195d604d5b5",
     "url": "/video-quiz/index.html"
   }
 ];
