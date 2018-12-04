@@ -11,7 +11,7 @@ import './App.scss';
 import Question from "./components/Question";
 import {Subtitle} from "./components/Subtitle";
 import {Debug} from "./components/Debug";
-
+import {PlayPause} from "./components/PlayPause";
 
 const TYPE_NEXTVIDEO = "nextVideo";
 
@@ -31,7 +31,8 @@ class App extends Component {
         currentCue: null,
         volume: 0.8,
         debug: false,
-        audioPlaying: true
+        audioPlaying: true,
+        gameStarted: false
     };
 
     onToggleDebug = () => {
@@ -51,7 +52,7 @@ class App extends Component {
     };
 
     forceStart = () => {
-        this.setState({muted: false})
+        this.setState({muted: false});
         this.advanceToNextState(0);
     };
 
@@ -99,6 +100,7 @@ class App extends Component {
 
     handleQuizButtonClick = ({link, title, "ga-action": gaAction}, questionType) => {
         if (questionType === "intro") {
+            this.setState({gameStarted: true});
             this.toggleMuted(false);
         }
         // console.log("quesiton type", questionType);
@@ -174,7 +176,7 @@ class App extends Component {
     };
 
     render() {
-        const {playing, currentQuestion, config, muted, showQuestion, currentCue, volume, audioPlaying} = this.state;
+        const {playing, currentQuestion, config, muted, showQuestion, currentCue, volume, audioPlaying, gameStarted} = this.state;
         const handlers = {
             'toggleDebug': this.onToggleDebug
         };
@@ -225,6 +227,10 @@ class App extends Component {
                           handleButtonClick={this.handleQuizButtonClick}
                           showQuestion={showQuestion}/>
                 <Subtitle cue={currentCue}/>
+                {/*using gameStarted and playing attributes it would be really easy to add overlay over the video when game is paused*/}
+                <PlayPause onClick={(e) => this.playPause(e)}
+                           playing={playing}
+                           gameStarted={gameStarted}/>
                 <button onClick={this.toggleMuted}>{muted ? "Unmute" : "Mute"}</button>
             </HotKeys>
         );
