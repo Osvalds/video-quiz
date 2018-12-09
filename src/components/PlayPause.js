@@ -1,5 +1,4 @@
 import React from 'react'
-import {HotKeys} from "react-hotkeys";
 
 export function PlayPause(props) {
     if (props.gameStarted) {

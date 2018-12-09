@@ -12,6 +12,7 @@ import {Debug} from "./Debug";
 import {PlayPause} from "./PlayPause";
 
 const TYPE_NEXTVIDEO = "nextVideo";
+const TYPE_OUTRO = "outro";
 
 const keyMap = {
     toggleDebug: 'command+shift+1'
@@ -114,6 +115,13 @@ class VideoQuiz extends Component {
         this.trackGaEvent(gaAction);
 
         this.setState({givenAnswers: givenAnswers})
+
+        let nextSlide = this.state.config.slides[link];
+        // if the next type is otry, we will just push the next url here and the app will just redirect
+        if (nextSlide.type === TYPE_OUTRO) {
+            this.props.history.push("/outro-uno")
+        }
+
     };
 
     componentDidMount() {
@@ -234,7 +242,8 @@ class VideoQuiz extends Component {
                              ref={(ref) => (this.backgroundSound = ref)}/>
                 <Question config={config.slides[currentQuestion]}
                           handleButtonClick={this.handleQuizButtonClick}
-                          showQuestion={showQuestion}/>
+                          showQuestion={showQuestion}
+                          location={this.props.location}/>
                 <Subtitle cue={currentCue}/>
                 {/*using gameStarted and playing attributes it would be really easy to add overlay over the video when game is paused*/}
                 <PlayPause onClick={(e) => this.playPause(e)}

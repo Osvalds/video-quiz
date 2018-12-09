@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {BrowserRouter as Redirect, Route} from "react-router-dom";
+
 
 /**
  * @return {null}
@@ -53,15 +55,12 @@ function RegularQuestion({props}) {
 
 function Outro({props}) {
     const {title, description, buttons} = props.config;
-    return <section className="question">
-        <h2 className="question__title">
-            {title}
-        </h2>
-        <div className="question__description">
-            {description}
-        </div>
-        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick}/>
-    </section>
+    console.log(props);
+    return <Route exact path="/" render={() => (
+
+            <Redirect to="/outro-uno"/>
+
+    )}/>
 }
 
 export default class Question extends Component {
