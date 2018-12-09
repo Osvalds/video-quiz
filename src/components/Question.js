@@ -3,10 +3,10 @@ import React, {Component} from 'react'
 /**
  * @return {null}
  */
-function ButtonItem({button, handleButtonClick, questionType}) {
+function ButtonItem({button, handleButtonClick, questionType, slideConfig}) {
     return <li className="question__answer-item">
         <button className={`button ${button.class}`}
-                onClick={(e) => handleButtonClick(button, questionType, e)}>
+                onClick={(e) => handleButtonClick(button, questionType, slideConfig, e)}>
             {button.title}
         </button>
     </li>
@@ -14,10 +14,15 @@ function ButtonItem({button, handleButtonClick, questionType}) {
 
 function ListButtons(props) {
     const buttonsList = props.buttons
-        // remove empty buttons from the list
+    // remove empty buttons from the list
         .filter(button => button.link !== null && button.title !== "")
         .map((button) =>
-            <ButtonItem key={button.title} button={button} handleButtonClick={props.handleButtonClick} questionType={props.questionType}/>
+            <ButtonItem key={button.title}
+                        button={button}
+                        handleButtonClick={props.handleButtonClick}
+                        questionType={props.questionType}
+                        slideConfig={props.slideConfig}
+            />
         );
 
     return (
@@ -34,7 +39,7 @@ function Intro({props}) {
         <div className="question__description">
             {description}
         </div>
-        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick} questionType={type}/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick} questionType={type} slideConfig={props.config}/>
     </section>
 }
 
@@ -42,7 +47,7 @@ function RegularQuestion({props}) {
     const {title, buttons} = props.config;
     return <section className="question">
         <h2 className="question__title">{title}</h2>
-        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick} type/>
+        <ListButtons buttons={buttons} handleButtonClick={props.handleButtonClick} slideConfig={props.config}/>
     </section>
 }
 

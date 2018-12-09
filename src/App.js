@@ -32,7 +32,8 @@ class App extends Component {
         volume: 0.8,
         debug: false,
         audioPlaying: true,
-        gameStarted: false
+        gameStarted: false,
+        givenAnswers: []
     };
 
     onToggleDebug = () => {
@@ -98,14 +99,23 @@ class App extends Component {
         }
     };
 
-    handleQuizButtonClick = ({link, title, "ga-action": gaAction}, questionType) => {
+    handleQuizButtonClick = (button, questionType, slideConfig) => {
+        let {link, "ga-action": gaAction} = button;
+        let givenAnswers = this.state.givenAnswers;
+        givenAnswers.push({
+            clickedButton: button,
+            slideConfig: slideConfig
+        });
+
         if (questionType === "intro") {
             this.setState({gameStarted: true});
             this.toggleMuted(false);
         }
-        // console.log("quesiton type", questionType);
+
         this.advanceToNextState(link);
         this.trackGaEvent(gaAction);
+
+        this.setState({givenAnswers: givenAnswers})
     };
 
     componentDidMount() {
@@ -138,7 +148,7 @@ class App extends Component {
         }
 
     }
-
+    
     getCurrentCue(cues, currentTime) {
         let currentCue;
         [currentCue] = cues.filter(cue => currentTime >= cue.startTime && currentTime <= cue.endTime);
